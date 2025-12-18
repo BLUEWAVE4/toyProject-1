@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <link rel="stylesheet" href="./output.css">
+    <!-- npx tailwindcss -i ./styles.css -o ./output.css --watch -->
+
+    <style>
+        @import "tailwindcss";
+
+        :root {
+            --fs-1: clamp(0.875rem, 0.8rem + 0.4vw, 1rem);
+            --fs-2: clamp(1rem, 0.9rem + 0.8vw, 1.5rem);
+            --fs-3: clamp(1.5rem, 1.2rem + 1.6vw, 2.5rem);
+        }
+
+        h1 {
+            font-size: var(--fs-3);
+        }
+
+        p {
+            font-size: var(--fs-1);
+        }
+
+
+    </style>
+</head>
+
+<!-- 
+타이포/간격: clamp + 토큰(rem)
+
+카드: auto-fit + minmax
+
+헤더: sticky + blur
+
+(가능하면) container query로 카드/메뉴 반응
+ -->
+
+<body>
+    <div id="wrapper">
+        <header>
+            <nav>
+                <div>
+
+                </div>
+                <!-- 드롭다운 -->
+                <div>
+
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- 히어로 영역 - 얇게 -->
+            <section class="section-layout"></section>
+            <!-- 캐러셀 영역 - 반응형 플렉스 -->
+            <section class="section-layout"></section>
+            <!-- 서브 네비 -->
+            <section></section>
+            <!-- 캐러셀 영역 - 반응형 플렉스 -->
+            <section class="section-layout"></section>
+        </main>
+
+        <!-- sticky -->
+        <footer>
+
+        </footer>
+    </div>
+</body>
+
+</html>
