@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
 @layer components {
-    .section-layout {
-        @apply mx-auto max-w-[1440px] w-full p-4 bg-gray-500
-    }
+
 }

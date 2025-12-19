@@ -11,8 +11,6 @@
     <!-- npx tailwindcss -i ./styles.css -o ./output.css --watch -->
 
     <style>
-        @import "tailwindcss";
-
         :root {
             --fs-1: clamp(0.875rem, 0.8rem + 0.4vw, 1rem);
             --fs-2: clamp(1rem, 0.9rem + 0.8vw, 1.5rem);
@@ -26,8 +24,6 @@
         p {
             font-size: var(--fs-1);
         }
-
-
     </style>
 </head>
 
@@ -42,11 +38,67 @@
  -->
 
 <body>
-    <div id="wrapper">
-        <header>
-            <nav>
-                <div>
+    <div id="wrapper bg-gray-700">
+        <header
+            class="sticky top-0 z-50 mx-auto max-w-[1440px] w-full bg-white/80 backdrop-blur-md border border-black/5">
+            <nav class="h-8 group bg-gray-600 w-full px-3">
+                <div class="flex justify-between lg:grid lg:grid-cols-[1fr_3fr_6fr_3fr_1fr] h-full items-center gap-3 ">
+                    <!-- Left: fit 로고 -->
+                    <div class="text-white font-bold italic">
+                        fit
+                    </div>
+                    <!-- 광고 배너 란 -->
+                    <div class="min-w-0 bg-white h-7 text-center font-bold text-sm lg:animate-pulse ">
+                        <p class="whitespace-nowrap overflow-hidden animate-bounce lg:animate-none">
+                            Gerogia Coffe EST.1975
+                        </p>
+                    </div>
+                    <!-- Center: 메뉴리스트 -->
+                    <ul
+                        class="hidden lg:flex lg:justify-center text-white lg:gap-10 border-black/5 border whitespace-nowrap">
+                        <li class="hover:underline duration-1000 cursor-pointer">메뉴</li>
+                        <li class="hover:underline duration-1000 cursor-pointer">메뉴</li>
+                        <li class="hover:underline duration-1000 cursor-pointer">메뉴</li>
+                        <li class="hover:underline duration-1000 cursor-pointer">메뉴</li>
+                        <li class="hover:underline duration-1000 cursor-pointer">메뉴</li>
+                        <li class="hover:underline duration-1000 cursor-pointer">메뉴</li>
+                    </ul>
+                    <!-- 검색창 -->
+                    <div class="min-w-0 flex justify-start">
+                        <form role="search" class="relative min-w-[50px] max-w-[200px]">
+                            <!-- 아이콘 -->
+                            <svg class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 translate-x-[130px] z-51 h-4 w-4 text-gray-400"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+                            </svg>
 
+                            <!-- 입력 -->
+                            <input type="search" placeholder="_________________" class="w-full h-6 rounded-full
+           bg-white/80 backdrop-blur
+           pl-6 pr-4
+           text-sm text-gray-900 placeholder:text-gray-400
+           border border-black/10
+           focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-black/30" />
+                        </form>
+                    </div>
+                    <!-- Right: 미니미(아이콘) -->
+                    <div class="shrink-0 min-w-0">
+                        <div
+                            class="w-25 h-8 rounded-tl-3xl bg-[url('./img/header-icon-minimi.png')] bg-cover bg-center bg-no-repeat">
+                        </div>
+                    </div>
+                    <!-- 햄버거 -->
+                    <div class="lg:hidden inline-block text-center translate-y-0.5 lg:translate-y-0">
+                        <button aria-label="메뉴 열기" class="text-white cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
                 <!-- 드롭다운 -->
                 <div>
@@ -57,13 +109,16 @@
 
         <main>
             <!-- 히어로 영역 - 얇게 -->
-            <section class="section-layout"></section>
+            <section class="mx-auto max-w-[1440px] w-full p-4 bg-gray-500">
+                <div class="bg-[url('img/bg-hero-main1.avif')] h-[clamp(200px,20vh,300px)] bg-cover bg-center">
+                </div>
+            </section>
             <!-- 캐러셀 영역 - 반응형 플렉스 -->
-            <section class="section-layout"></section>
+            <section class="mx-auto max-w-[1440px] w-full h-full p-4 bg-gray-500"></section>
             <!-- 서브 네비 -->
             <section></section>
             <!-- 캐러셀 영역 - 반응형 플렉스 -->
-            <section class="section-layout"></section>
+            <section class="mx-auto max-w-[1440px] w-full h-full p-4 bg-gray-500"></section>
         </main>
 
         <!-- sticky -->
