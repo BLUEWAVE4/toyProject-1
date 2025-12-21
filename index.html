@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>fit :: 쇼핑하는 시간을 줄여주는 몰</title>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     <link rel="stylesheet" href="./output.css">
@@ -21,6 +21,10 @@
             font-size: var(--fs-3);
         }
 
+        h2 {
+            font-size: var(--fs-2);
+        }
+
         p {
             font-size: var(--fs-1);
         }
@@ -28,65 +32,60 @@
 </head>
 
 <!-- 
-타이포/간격: clamp + 토큰(rem)
-
-카드: auto-fit + minmax
-
-헤더: sticky + blur
-
-(가능하면) container query로 카드/메뉴 반응
+    타이포/간격: clamp + 토큰(rem)
+    카드: auto-fit + minmax
+    헤더: sticky + blur
+    (가능하면) container query로 카드/메뉴 반응형
  -->
 
-<body>
-    <div id="wrapper bg-gray-700">
+<body class="bg-gray-100 max-w-[1440px] mx-auto border">
+    <div id="wrapper">
         <header
-            class="sticky top-0 z-50 mx-auto max-w-[1440px] w-full bg-white/80 backdrop-blur-md border border-black/5">
+            class="sticky top-0 z-50 mx-auto max-w-[1440px] w-full bg-white/80 backdrop-blur-md border-b border-black/10">
             <nav class="h-8 group bg-gray-600 w-full px-3">
                 <div class="flex justify-between lg:grid lg:grid-cols-[1fr_3fr_6fr_3fr_1fr] h-full items-center gap-3 ">
                     <!-- Left: fit 로고 -->
                     <div class="text-white font-bold italic">
-                        fit
+                        <a href="index.html">fit</a>
                     </div>
                     <!-- 광고 배너 란 -->
-                    <div class="min-w-0 bg-white h-7 text-center font-bold text-sm lg:animate-pulse ">
-                        <p class="whitespace-nowrap overflow-hidden animate-bounce lg:animate-none">
+                    <div class="min-w-0 bg-white h-7 text-center font-bold text-sm flex items-center justify-center">
+                        <p class="whitespace-nowrap overflow-hidden">
                             Gerogia Coffe EST.1975
                         </p>
                     </div>
                     <!-- Center: 메뉴리스트 -->
                     <ul
                         class="hidden lg:flex lg:justify-center text-white lg:gap-10 border-black/5 border whitespace-nowrap">
-                        <li class="hover:underline duration-1000 cursor-pointer">메뉴</li>
-                        <li class="hover:underline duration-1000 cursor-pointer">메뉴</li>
-                        <li class="hover:underline duration-1000 cursor-pointer">메뉴</li>
-                        <li class="hover:underline duration-1000 cursor-pointer">메뉴</li>
-                        <li class="hover:underline duration-1000 cursor-pointer">메뉴</li>
-                        <li class="hover:underline duration-1000 cursor-pointer">메뉴</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">메뉴</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">메뉴</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">메뉴</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">메뉴</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">메뉴</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">메뉴</li>
                     </ul>
                     <!-- 검색창 -->
-                    <div class="min-w-0 flex justify-start">
-                        <form role="search" class="relative min-w-[50px] max-w-[200px]">
+                    <div class="min-w-0 flex justify-start hidden lg:inline-block">
+                        <form role="search" class="relative min-w-[50px] max-w-[200px] flex items-center gap-3">
+                            <!-- 입력 -->
+                            <input type="search" placeholder="크롭 니트" class="w-full h-6 rounded-full
+                            bg-white/80 backdrop-blur
+                            pl-6 pr-4
+                            text-sm text-gray-900 placeholder:text-gray-400
+                            border border-black/10
+                            focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-black/30" />
                             <!-- 아이콘 -->
-                            <svg class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 translate-x-[130px] z-51 h-4 w-4 text-gray-400"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                            <svg class="z-51 h-4 w-4 text-gray-400 cursor-pointer" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
                             </svg>
-
-                            <!-- 입력 -->
-                            <input type="search" placeholder="_________________" class="w-full h-6 rounded-full
-           bg-white/80 backdrop-blur
-           pl-6 pr-4
-           text-sm text-gray-900 placeholder:text-gray-400
-           border border-black/10
-           focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-black/30" />
                         </form>
                     </div>
                     <!-- Right: 미니미(아이콘) -->
                     <div class="shrink-0 min-w-0">
                         <div
-                            class="w-25 h-8 rounded-tl-3xl bg-[url('./img/header-icon-minimi.png')] bg-cover bg-center bg-no-repeat">
+                            class="w-25 h-8 rounded-tl-3xl bg-[url('./img/header-icon-minimi.png')] bg-cover bg-center bg-no-repeat cursor-pointer">
                         </div>
                     </div>
                     <!-- 햄버거 -->
@@ -109,14 +108,120 @@
 
         <main>
             <!-- 히어로 영역 - 얇게 -->
-            <section class="mx-auto max-w-[1440px] w-full p-4 bg-gray-500">
-                <div class="bg-[url('img/bg-hero-main1.avif')] h-[clamp(200px,20vh,300px)] bg-cover bg-center">
+            <section class="mx-auto max-w-[1440px] w-full p-0">
+                <div class="bg-[url('img/bg-hero-main1.avif')] h-[clamp(200px,15vh,300px)] bg-cover bg-center">
                 </div>
             </section>
+
             <!-- 캐러셀 영역 - 반응형 플렉스 -->
-            <section class="mx-auto max-w-[1440px] w-full h-full p-4 bg-gray-500"></section>
+            <section>
+                <!-- 캐러셀 컨테이너 -->
+                <div class="mx-auto max-w-[1440px] w-full h-full mt-8">
+                    <!-- 캐러셀 트랙 -->
+                    <ul class="w-full flex justify-center gap-15 box-shadow-lg">
+                        <!-- 캐러셀 1 -->
+                        <li class="relative bg-white w-[320px] aspect-[3/4] rounded-xl group shadow-[0_4px_10px_rgba(0,0,0,.08),0_12px_30px_rgba(0,0,0,.12)]">
+                            <img class="absolute lg:group-hover:scale-[1.05] w-full h-full object-contain transition"
+                                src="img/carousel1.png" alt="사진1">
+                            <!-- 좋아요 버튼 -->
+                            <button class="
+                            absolute top-[clamp(0.2rem,0.5vw,1.8rem)] right-[clamp(0.2rem,0.5vw,1.8rem)] z-10
+                            w-9 h-9
+                            flex items-center justify-center
+                            rounded-full
+                            bg-white/80 backdrop-blur
+                            hover:bg-white
+                            transition
+                            " aria-label="좋아요">
+                                <!-- 하트 아이콘 -->
+                                <svg class="w-5 h-5 text-red-300 transition cursor-pointer" fill="none" stroke="currentColor"
+                                    stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M20.84 4.61c-1.54-1.34-3.77-1.34-5.31 0L12 8.09l-3.53-3.48c-1.54-1.34-3.77-1.34-5.31 0-1.7 1.48-1.77 4.13-.21 5.7L12 21l9.05-10.69c1.56-1.57 1.49-4.22-.21-5.7z" />
+                                </svg>
+                            </button>
+                        </li>
+                        <!-- 캐러셀 2 -->
+                        <li class="relative bg-white w-[320px] aspect-[3/4] rounded-xl group shadow-[0_4px_10px_rgba(0,0,0,.08),0_12px_30px_rgba(0,0,0,.12)]">
+                            <img class="absolute lg:group-hover:scale-[1.05] w-full h-full object-contain transition"
+                                src="img/carousel2.png" alt="사진2">
+                            <!-- 좋아요 버튼 -->
+                            <button class="
+                            absolute top-[clamp(0.2rem,0.5vw,1.8rem)] right-[clamp(0.2rem,0.5vw,1.8rem)] z-10
+                            w-9 h-9
+                            flex items-center justify-center
+                            rounded-full
+                            bg-white/80 backdrop-blur
+                            hover:bg-white
+                            transition
+                            " aria-label="좋아요">
+                                <!-- 하트 아이콘 -->
+                                <svg class="w-5 h-5 text-red-300 transition cursor-pointer" fill="none" stroke="currentColor"
+                                    stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M20.84 4.61c-1.54-1.34-3.77-1.34-5.31 0L12 8.09l-3.53-3.48c-1.54-1.34-3.77-1.34-5.31 0-1.7 1.48-1.77 4.13-.21 5.7L12 21l9.05-10.69c1.56-1.57 1.49-4.22-.21-5.7z" />
+                                </svg>
+                            </button>
+                        </li>
+                        <!-- 캐러셀 3 -->
+                        <li class="relative bg-white w-[320px] aspect-[3/4] rounded-xl group shadow-[0_4px_10px_rgba(0,0,0,.08),0_12px_30px_rgba(0,0,0,.12)]">
+                            <img class="absolute lg:group-hover:scale-[1.05] w-full h-full object-contain transition"
+                                src="img/carousel3.png" alt="사진3">
+                            <!-- 좋아요 버튼 -->
+                            <button class="
+                            absolute top-[clamp(0.2rem,0.5vw,1.8rem)] right-[clamp(0.2rem,0.5vw,1.8rem)] z-10
+                            w-9 h-9
+                            flex items-center justify-center
+                            rounded-full
+                            bg-white/80 backdrop-blur
+                            hover:bg-white
+                            transition
+                            " aria-label="좋아요">
+                                <!-- 하트 아이콘 -->
+                                <svg class="w-5 h-5 text-red-300 transition cursor-pointer" fill="none" stroke="currentColor"
+                                    stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M20.84 4.61c-1.54-1.34-3.77-1.34-5.31 0L12 8.09l-3.53-3.48c-1.54-1.34-3.77-1.34-5.31 0-1.7 1.48-1.77 4.13-.21 5.7L12 21l9.05-10.69c1.56-1.57 1.49-4.22-.21-5.7z" />
+                                </svg>
+                            </button>
+                    </ul>
+                    <!-- 텍스트 트랙 -->
+                    <ul class="w-full flex justify-center gap-15 mt-4 mb-8">
+                        <!-- 캐러셀 1 -->
+                        <li class="w-[320px] p-3 rounded-sm">
+                            <h2 class="font-bold"> 최근 구매 상품</h2>
+                            <p> 추천알고리즘 A type</p>
+                        </li>
+                        <!-- 캐러셀 2 -->
+                        <li class="w-[320px] p-3 rounded-sm">
+                            <h2 class="font-bold"> 트렌드 상품</h2>
+                            <p> 추천알고리즘 B type</p>
+                        </li>
+                        <!-- 캐러셀 3 -->
+                        <li class="w-[320px] p-3 rounded-sm">
+                            <h2 class="font-bold"> 인기 상품</h2>
+                            <p> 추천알고리즘 C type</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
             <!-- 서브 네비 -->
-            <section></section>
+            <section class="mt-80">
+                <div class="mx-auto max-w-[1440px] bg-gray-600">
+                    <ul class="flex gap-10 justify-center p-2 border border-black text-white">
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">뷰티</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">신발</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">상의</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">아우터</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">바지</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">원피스/스커트</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">가방</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">패션소품</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">속옷/홈웨어</li>
+                        <li class="hover:underline hover:decoration-2 hover:underline-offset-4 duration-1000 cursor-pointer">스포츠/레저</li>
+                    </ul>
+                </div>
+            </section>
             <!-- 캐러셀 영역 - 반응형 플렉스 -->
             <section class="mx-auto max-w-[1440px] w-full h-full p-4 bg-gray-500"></section>
         </main>
