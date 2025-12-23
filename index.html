@@ -10,23 +10,37 @@
     <link rel="stylesheet" href="./output.css">
     <!-- npx tailwindcss -i ./styles.css -o ./output.css --watch -->
 
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --fs-1: clamp(0.875rem, 0.8rem + 0.4vw, 1rem);
-            --fs-2: clamp(1rem, 0.9rem + 0.8vw, 1.5rem);
-            --fs-3: clamp(1.5rem, 1.2rem + 1.6vw, 2.5rem);
+            --fs-4: clamp(0.875rem, 0.6rem + 0.4vw, 1rem);
+            --fs-3: clamp(1rem, 0.7rem + 0.8vw, 1.5rem);
+            --fs-2: clamp(1.5rem, 0.8rem + 1.6vw, 2.5rem);
+            --fs-1: clamp(2.2rem, 1.5rem + 3.2vw, 4rem);
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         h1 {
-            font-size: var(--fs-3);
+            font-size: var(--fs-1);
         }
 
         h2 {
             font-size: var(--fs-2);
         }
 
+        h3 {
+            font-size: var(--fs-3)
+        }
+
         p {
-            font-size: var(--fs-1);
+            font-size: var(--fs-4);
         }
     </style>
 </head>
@@ -128,7 +142,7 @@
             <!-- 섹션1 : 캐러셀 영역 - 반응형 플렉스 -->
             <section>
                 <!-- 캐러셀 컨테이너 -->
-                <div class="mx-auto max-w-[1440px] w-full h-full mt-8">
+                <div class="mx-auto max-w-[1440px] w-full h-full mt-[clamp(2rem,5vw+0.8rem,6rem)]">
                     <!-- 캐러셀 트랙 -->
                     <ul class="w-full flex justify-center gap-15 box-shadow-lg">
                         <!-- 캐러셀 1 -->
@@ -203,17 +217,17 @@
                     <!-- 텍스트 트랙 -->
                     <ul class="w-full flex justify-center gap-15 mt-4 mb-8">
                         <!-- 캐러셀 1 -->
-                        <li class="w-[320px] p-3 rounded-sm">
+                        <li class="w-[320px] rounded-sm">
                             <h2 class="font-bold"> 최근 구매 상품</h2>
                             <p> 추천알고리즘 A type</p>
                         </li>
                         <!-- 캐러셀 2 -->
-                        <li class="w-[320px] p-3 rounded-sm">
+                        <li class="w-[320px] rounded-sm">
                             <h2 class="font-bold"> 트렌드 상품</h2>
                             <p> 추천알고리즘 B type</p>
                         </li>
                         <!-- 캐러셀 3 -->
-                        <li class="w-[320px] p-3 rounded-sm">
+                        <li class="w-[320px] rounded-sm">
                             <h2 class="font-bold"> 인기 상품</h2>
                             <p> 추천알고리즘 C type</p>
                         </li>
@@ -259,6 +273,11 @@
             </section>
             <!-- 섹션 2 : 상품 카드리스트 영역 - 반응형 플렉스 -->
             <section class="mx-auto max-w-[1440px] w-full h-full p-4 bg-gray-100">
+                <div>
+                    <h2 class="font-bold my-8">
+                        금일 가장 많은 좋아요를 받은 상품 >
+                    </h2>
+                </div>
                 <!-- 컨테이너 서브래퍼 -->
                 <div class="overflow-x-auto">
                     <!-- 카드 트랙 -->
@@ -270,14 +289,16 @@
                                 <div>
                                     <img class="bg-gray-200" src="img/section02-cardlist-product-01.png" alt="카드상품01">
                                 </div>
+                                <!-- 텍스트 -->
+                                <div class="p-2">
+                                    <p class="font-bold text-gray-500">루니어</p>
+                                    <p class="font-bold">가죽 핸드백</p>
+                                    <h3 class="font-bold mt-2">
+                                        <span class="text-blue-700 mr-2">n%</span>155,000원
+                                    </h3>
+                                    <p class="py-2 font-bold text-red-400 border-b w-8 h-6 top-0 text-center">fit</p>
+                                </div>
                             </a>
-                            <!-- 텍스트 -->
-                            <div class="p-2">
-                                <p class="py-2 font-bold text-red-400 border-b w-8 h-6 top-0 text-center">fit</p>
-                                <p class="py-2 font-bold text-gray-500">루니어</p>
-                                <h2 class="font-bold">가죽 핸드백</h2>
-                                <p>155,000 원</p>
-                            </div>
                         </li>
                         <!-- 카드 리스트 영역 2 -->
                         <li class="w-[250px] aspect-[3/4]">
@@ -286,14 +307,19 @@
                                 <div>
                                     <img class="bg-gray-200" src="img/section02-cardlist-product-02.png" alt="카드상품01">
                                 </div>
+                                <!-- 텍스트 -->
+                                <div class="p-2">
+                                    <p class="font-bold text-gray-500">나이키</p>
+                                    <p class="font-bold">포스 운동화</p>
+                                    <h3 class="font-bold mt-2">
+                                        <span class="text-blue-700 mr-2">n%</span>113,000 원
+                                    </h3>
+                                    <p
+                                        class="py-2 font-bold text-gray-500 border-b w-8 h-6 top-0 text-center opacity-0">
+                                        fit
+                                    </p>
+                                </div>
                             </a>
-                            <!-- 텍스트 -->
-                            <div class="p-2">
-                                <p class="py-2 font-bold text-gray-500 border-b w-8 h-6 top-0 text-center opacity-0">fit</p>
-                                <p class="py-2 font-bold text-gray-500">나이키</p>
-                                <h2 class="font-bold">포스 운동화</h2>
-                                <p>113,000 원</p>
-                            </div>
                         </li>
                         <!-- 카드 리스트 영역 3 -->
                         <li class="w-[250px] aspect-[3/4]">
@@ -302,14 +328,19 @@
                                 <div>
                                     <img class="bg-gray-200" src="img/section02-cardlist-product-03.png" alt="카드상품01">
                                 </div>
+                                <!-- 텍스트 -->
+                                <div class="p-2">
+                                    <p class="font-bold text-gray-500">스탠리</p>
+                                    <p class="font-bold">스테인리스 텀블러</p>
+                                    <h3 class="font-bold mt-2">
+                                        <span class="text-blue-700 mr-2">n%</span>36,000 원
+                                    </h3>
+                                    <p
+                                        class="py-2 font-bold text-gray-500 border-b w-8 h-6 top-0 text-center opacity-0">
+                                        fit
+                                    </p>
+                                </div>
                             </a>
-                            <!-- 텍스트 -->
-                            <div class="p-2">
-                                <p class="py-2 font-bold text-gray-500 border-b w-8 h-6 top-0 text-center opacity-0">fit</p>
-                                <p class="py-2 font-bold text-gray-500">스탠리</p>
-                                <h2 class="font-bold">스테인리스 텀블러</h2>
-                                <p>36,000 원</p>
-                            </div>
                         </li>
                         <!-- 카드 리스트 영역 4 -->
                         <li class="w-[250px] aspect-[3/4]">
@@ -318,14 +349,14 @@
                                 <div>
                                     <img class="bg-gray-200" src="img/section02-cardlist-product-04.png" alt="카드상품01">
                                 </div>
+                                <!-- 텍스트 -->
+                                <div class="p-2">
+                                    <p class="font-bold text-gray-500">마샬</p>
+                                    <p class="font-bold">무선 헤드셋</p>
+                                    <h3 class="font-bold mt-2">389,000 원</h3>
+                                    <p class="py-2 font-bold text-red-400 border-b w-8 h-6 top-0 text-center">fit</p>
+                                </div>
                             </a>
-                            <!-- 텍스트 -->
-                            <div class="p-2">
-                                <p class="py-2 font-bold text-red-400 border-b w-8 h-6 top-0 text-center">fit</p>
-                                <p class="py-2 font-bold text-gray-500">마샬</p>
-                                <h2 class="font-bold">무선 헤드셋</h2>
-                                <p>389,000 원</p>
-                            </div>
                         </li>
                         <!-- 카드 리스트 영역 5 -->
                         <li class="w-[250px] aspect-[3/4]">
@@ -334,14 +365,14 @@
                                 <div>
                                     <img class="bg-gray-200" src="img/section02-cardlist-product-05.png" alt="카드상품01">
                                 </div>
+                                <!-- 텍스트 -->
+                                <div class="p-2">
+                                    <p class="font-bold text-gray-500">rHt</p>
+                                    <p class="font-bold">gps 스마트워치</p>
+                                    <h3 class="font-bold mt-2">250,000 원</h3>
+                                    <p class="py-2font-bold text-red-400 border-b w-8 h-6 top-0 text-center">fit</p>
+                                </div>
                             </a>
-                            <!-- 텍스트 -->
-                            <div class="p-2">
-                                <p class="py-2 font-bold text-red-400 border-b w-8 h-6 top-0 text-center">fit</p>
-                                <p class="py-2 font-bold text-gray-500">rHt</p>
-                                <h2 class="font-bold">gps 스마트워치</h2>
-                                <p>250,000 원</p>
-                            </div>
                         </li>
                         <!-- 카드 리스트 영역 1 -->
                         <li class="w-[250px] aspect-[3/4]">
